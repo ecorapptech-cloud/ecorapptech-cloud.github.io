@@ -1,86 +1,73 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoRappTech – Consulenze e Comunità Energetiche</title>
-  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanza aziendale e supporto per Comunità Energetiche." />
 
   <style>
-    :root {
-      --primary: #4a90e2;
-      --secondary: #1f3c88;
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #2b2b2b;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #2b2b2b;
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      padding: 50px 20px;
+      background: linear-gradient(135deg, #4a90e2, #1f3c88);
+      padding: 40px 20px 50px;
     }
 
-    .header-wrapper {
+    .header-box {
       max-width: 1100px;
       margin: auto;
     }
 
     /* LOGO */
     .logo {
-      width: 120px;
+      width: 140px;
+      display: block;
       margin-bottom: 25px;
-      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
     }
 
-    /* TITOLO CENTRATO */
-    .site-title {
-      text-align: center;
+    /* TITOLO */
+    .title {
       font-size: 2.8rem;
-      margin: 0;
-      letter-spacing: 1px;
+      color: #fff;
+      margin: 0 0 20px 0;
     }
 
-    /* SOTTOTITOLO ALLINEATO A SINISTRA */
-    .site-subtitle {
-      margin-top: 20px;
+    /* TESTI A SINISTRA */
+    .subtitle {
+      color: #fff;
       font-size: 1.05rem;
-      text-align: left;
+      margin-bottom: 6px;
       white-space: nowrap;
       overflow-x: auto;
-      opacity: 0.95;
+    }
+
+    .subtitle-second {
+      color: #eaf2ff;
+      font-size: 1.05rem;
+      white-space: nowrap;
+      overflow-x: auto;
     }
 
     nav {
       background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       text-align: center;
       padding: 12px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
     }
 
     nav a {
       margin: 0 18px;
       text-decoration: none;
-      color: var(--primary);
+      color: #4a90e2;
       font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--secondary);
     }
 
     .container {
@@ -90,7 +77,7 @@
     }
 
     .card {
-      background: var(--card);
+      background: #fff;
       border-radius: 14px;
       padding: 35px;
       margin-bottom: 35px;
@@ -98,41 +85,25 @@
     }
 
     .card h2 {
+      color: #1f3c88;
       margin-top: 0;
-      color: var(--secondary);
-      font-size: 1.8rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    .highlight {
-      background: rgba(74,144,226,0.08);
-      padding: 15px 20px;
-      border-left: 4px solid var(--primary);
-      border-radius: 6px;
-      margin-top: 20px;
     }
 
     footer {
-      background: var(--secondary);
+      background: #1f3c88;
       color: #fff;
       text-align: center;
-      padding: 25px 15px;
+      padding: 25px;
       font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      .site-title {
-        font-size: 2.1rem;
+      .title {
+        font-size: 2rem;
       }
 
-      .site-subtitle {
+      .subtitle,
+      .subtitle-second {
         white-space: normal;
       }
     }
@@ -142,18 +113,22 @@
 <body>
 
 <header>
-  <div class="header-wrapper">
+  <div class="header-box">
 
-    <!-- LOGO -->
-    <img src="logo.png" alt="EcoRappTech Logo" class="logo">
+    <!-- LOGO INSERITO MANUALMENTE -->
+    <img src="logo-ecorapptech.png" alt="EcoRappTech Logo" class="logo">
 
-    <!-- TITOLO CENTRATO -->
-    <h1 class="site-title">EcoRappTech</h1>
+    <!-- NOME -->
+    <h1 class="title">EcoRappTech</h1>
 
-    <!-- SOTTOTITOLO A SINISTRA SU UNA RIGA -->
-    <div class="site-subtitle">
-      Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza · Attivazione Comunità Energetiche ·
-      <strong>Servizi per Privati, Aziende e Terzo Settore</strong>
+    <!-- PRIMA RIGA -->
+    <div class="subtitle">
+      Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza · Attivazione Comunità Energetiche
+    </div>
+
+    <!-- SECONDA RIGA -->
+    <div class="subtitle-second">
+      Servizi e Prodotti per Privati, Aziende e Terzo Settore
     </div>
 
   </div>
@@ -171,22 +146,9 @@
   <div class="card">
     <h2>Benvenuti</h2>
     <p>
-      EcoRappTech è una realtà specializzata nel supporto operativo e strategico per
-      progetti sostenibili, sviluppo commerciale e gestione amministrativa.
-      Affianchiamo imprese, professionisti ed enti del terzo settore nella crescita
-      e nell’innovazione.
-    </p>
-    <div class="highlight">
-      Approccio concreto · Visione sostenibile · Supporto completo
-    </div>
-  </div>
-
-  <div class="card" id="about">
-    <h2>Chi siamo</h2>
-    <p>
-      EcoRappTech opera come struttura di consulenza integrata, con competenze
-      multidisciplinari maturate in ambito tecnico, commerciale e amministrativo.
-      Lavoriamo come partner operativo, non solo come consulenti.
+      EcoRappTech supporta privati, aziende ed enti del terzo settore con consulenze
+      tecniche, commerciali e amministrative, favorendo lo sviluppo sostenibile,
+      l’efficienza energetica e la crescita organizzativa.
     </p>
   </div>
 
@@ -194,17 +156,15 @@
     <h2>Servizi</h2>
     <ul>
       <li>Consulenze tecniche e amministrative</li>
-      <li>Consulenze e sviluppo commerciale</li>
-      <li>Agenzia di rappresentanza aziendale</li>
-      <li>Supporto e attivazione Comunità Energetiche Rinnovabili</li>
-      <li>Affiancamento a enti e organizzazioni del terzo settore</li>
+      <li>Sviluppo e rappresentanza commerciale</li>
+      <li>Supporto Comunità Energetiche</li>
+      <li>Servizi per il terzo settore</li>
     </ul>
   </div>
 
   <div class="card" id="contact">
     <h2>Contatti</h2>
     <p>Email: <strong>ecorapptech@gmail.com</strong></p>
-    <p>Operativi su tutto il territorio nazionale</p>
   </div>
 
 </div>
@@ -215,4 +175,5 @@
 
 </body>
 </html>
+
 
