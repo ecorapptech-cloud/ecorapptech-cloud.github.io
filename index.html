@@ -25,37 +25,40 @@
       line-height: 1.6;
     }
 
-    /* HEADER CON LOGO A SINISTRA */
+    /* HEADER */
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
-    .header-content {
+    .header-wrapper {
       max-width: 1100px;
       margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 30px;
     }
 
+    /* LOGO */
     .logo {
       width: 120px;
-      height: auto;
+      margin-bottom: 25px;
       filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
     }
 
-    .header-text h1 {
+    /* TITOLO CENTRATO */
+    .site-title {
+      text-align: center;
+      font-size: 2.8rem;
       margin: 0;
-      font-size: 2.6rem;
       letter-spacing: 1px;
     }
 
-    .header-text p {
-      max-width: 800px;
-      margin: 15px 0 0;
+    /* SOTTOTITOLO ALLINEATO A SINISTRA */
+    .site-subtitle {
+      margin-top: 20px;
       font-size: 1.05rem;
+      text-align: left;
+      white-space: nowrap;
+      overflow-x: auto;
       opacity: 0.95;
     }
 
@@ -124,23 +127,13 @@
       font-size: 0.9rem;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
+      .site-title {
+        font-size: 2.1rem;
       }
 
-      .logo {
-        width: 100px;
-      }
-
-      .header-text h1 {
-        font-size: 2rem;
-      }
-
-      nav a {
-        margin: 0 10px;
+      .site-subtitle {
+        white-space: normal;
       }
     }
   </style>
@@ -149,17 +142,20 @@
 <body>
 
 <header>
-  <div class="header-content">
-    <img src="logo-ecorapptech.png" alt="EcoRappTech Logo" class="logo">
+  <div class="header-wrapper">
 
-    <div class="header-text">
-      <h1>EcoRappTech</h1>
-      <p>
-        Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
-        Attivazione Comunità Energetiche<br>
-        <strong>Servizi per Privati, Aziende e Terzo Settore</strong>
-      </p>
+    <!-- LOGO -->
+    <img src="logo.png" alt="EcoRappTech Logo" class="logo">
+
+    <!-- TITOLO CENTRATO -->
+    <h1 class="site-title">EcoRappTech</h1>
+
+    <!-- SOTTOTITOLO A SINISTRA SU UNA RIGA -->
+    <div class="site-subtitle">
+      Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza · Attivazione Comunità Energetiche ·
+      <strong>Servizi per Privati, Aziende e Terzo Settore</strong>
     </div>
+
   </div>
 </header>
 
@@ -192,11 +188,6 @@
       multidisciplinari maturate in ambito tecnico, commerciale e amministrativo.
       Lavoriamo come partner operativo, non solo come consulenti.
     </p>
-    <p>
-      Supportiamo l’analisi, l’organizzazione e la realizzazione di iniziative
-      economiche e progettuali, con particolare attenzione all’energia,
-      all’efficienza e alla cooperazione tra soggetti pubblici e privati.
-    </p>
   </div>
 
   <div class="card" id="services">
@@ -224,3 +215,4 @@
 
 </body>
 </html>
+
