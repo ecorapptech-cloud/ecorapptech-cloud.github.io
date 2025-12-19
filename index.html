@@ -1,48 +1,118 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoRappTech</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoRappTech – Consulenze e Comunità Energetiche</title>
+  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanza aziendale e supporto per Comunità Energetiche." />
   <style>
+    :root {
+      --primary: #4a90e2;
+      --secondary: #1f3c88;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #2b2b2b;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
     header {
-      background: #4a90e2;
-      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 70px 20px 50px;
       text-align: center;
-      padding: 50px 20px;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 20px auto 0;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
     nav {
-      background: #ffffff;
-      padding: 15px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 12px 0;
     }
+
     nav a {
-      margin: 0 15px;
+      margin: 0 18px;
       text-decoration: none;
-      color: #4a90e2;
-      font-weight: bold;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 35px;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--secondary);
+      font-size: 1.8rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: rgba(74,144,226,0.08);
+      padding: 15px 20px;
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
     footer {
+      background: var(--secondary);
+      color: #fff;
       text-align: center;
-      padding: 25px;
-      background: #4a90e2;
-      color: white;
-      margin-top: 50px;
+      padding: 25px 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      nav a { margin: 0 10px; }
     }
   </style>
 </head>
@@ -51,9 +121,9 @@
 <header>
   <h1>EcoRappTech</h1>
   <p>
-    Consulenze Tecniche, Commerciali e Amministrative<br>
-    Agenzia di Rappresentanza<br>
-    Attivazioni Comunità Energetiche<br>
+    Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
+    Attivazione Comunità Energetiche
+    <br />
     Servizi per Privati, Aziende e Terzo Settore
   </p>
 </header>
@@ -66,73 +136,53 @@
 </nav>
 
 <div class="container" id="home">
-  <h2>Benvenuti</h2>
-  <p>
-    EcoRappTech offre consulenze professionali e supporto operativo
-    per progetti sostenibili, rappresentanze aziendali e comunità energetiche.
-  </p>
-</div>
+  <div class="card">
+    <h2>Benvenuti</h2>
+    <p>
+      EcoRappTech è una realtà specializzata nel supporto operativo e strategico per
+      progetti sostenibili, sviluppo commerciale e gestione amministrativa.
+      Affianchiamo imprese, professionisti ed enti del terzo settore nella crescita
+      e nell’innovazione.
+    </p>
+    <div class="highlight">
+      Approccio concreto · Visione sostenibile · Supporto completo
+    </div>
+  </div>
 
-<div class="container" id="about">
-<div class="container" id="about">
-  <h2>Chi siamo</h2>
+  <div class="card" id="about">
+    <h2>Chi siamo</h2>
+    <p>
+      EcoRappTech opera come struttura di consulenza integrata, con competenze
+      multidisciplinari maturate in ambito tecnico, commerciale e amministrativo.
+      Lavoriamo come partner operativo, non solo come consulenti.
+    </p>
+    <p>
+      Supportiamo l’analisi, l’organizzazione e la realizzazione di iniziative
+      economiche e progettuali, con particolare attenzione all’energia,
+      all’efficienza e alla cooperazione tra soggetti pubblici e privati.
+    </p>
+  </div>
 
-  <p>
-    EcoRappTech è una realtà organizzata che opera come struttura di consulenza
-    tecnica, commerciale e amministrativa, con un approccio integrato orientato
-    all’innovazione, alla sostenibilità e allo sviluppo di soluzioni concrete
-    per imprese, enti e organizzazioni del terzo settore.
-  </p>
+  <div class="card" id="services">
+    <h2>Servizi</h2>
+    <ul>
+      <li>Consulenze tecniche e amministrative</li>
+      <li>Consulenze e sviluppo commerciale</li>
+      <li>Agenzia di rappresentanza aziendale</li>
+      <li>Supporto e attivazione Comunità Energetiche Rinnovabili</li>
+      <li>Affiancamento a enti e organizzazioni del terzo settore</li>
+    </ul>
+  </div>
 
-  <p>
-    Il nostro gruppo nasce dall’unione di competenze multidisciplinari maturate
-    in contesti aziendali, industriali e istituzionali, e si propone come partner
-    operativo per l’analisi, l’organizzazione e il supporto strategico delle
-    attività economiche e produttive.
-  </p>
-
-  <p>Operiamo in ambiti che comprendono:</p>
-
-  <ul>
-    <li>Consulenza tecnica e organizzativa</li>
-    <li>Qualità, sicurezza e processi aziendali</li>
-    <li>Formazione e riqualificazione professionale</li>
-    <li>Rappresentanze aziendali e sviluppo commerciale</li>
-    <li>Progetti legati all’energia e alle comunità energetiche</li>
-  </ul>
-
-  <p>
-    Lavoriamo con privati, aziende e realtà del terzo settore, offrendo un
-    supporto flessibile e modulare, adattato alle esigenze specifiche di ogni
-    contesto.
-  </p>
-
-  <p>
-    EcoRappTech si distingue per un approccio pratico e strutturato, fondato
-    sull’esperienza, sulla capacità di coordinamento e su una visione orientata
-    alla crescita sostenibile e alla valorizzazione delle competenze.
-  </p>
-</div>
-
-
-
-<div class="container" id="services">
-  <h2>Servizi</h2>
-  <ul>
-    <li>Consulenze Tecniche e Amministrative</li>
-    <li>Consulenze Commerciali</li>
-    <li>Rappresentanza Aziendale</li>
-    <li>Comunità Energetiche Rinnovabili</li>
-  </ul>
-</div>
-
-<div class="container" id="contact">
-  <h2>Contatti</h2>
-  <p>Email: <strong>ecorapptech@gmail.com</strong></p>
+  <div class="card" id="contact">
+    <h2>Contatti</h2>
+    <p>Email: <strong>ecorapptech@gmail.com</strong></p>
+    <p>Operativi su tutto il territorio nazionale</p>
+  </div>
 </div>
 
 <footer>
-  <p>© 2025 EcoRappTech</p>
+  © 2025 EcoRappTech · Tutti i diritti riservati
 </footer>
 
 </body>
