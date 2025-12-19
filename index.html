@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoRappTech – Consulenze Tecniche e Comunità Energetiche</title>
 
-  <!-- SEO BASE -->
-  <title>EcoRappTech | Consulenze Tecniche, Commerciali e Comunità Energetiche</title>
-  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanza aziendale e supporto per Comunità Energetiche. Servizi per privati, aziende e terzo settore in tutta Italia.">
-  <meta name="keywords" content="consulenze tecniche, consulenze commerciali, comunità energetiche, rappresentanza aziendale, terzo settore, energia rinnovabile">
-  <meta name="author" content="EcoRappTech">
-
-  <!-- SEO SOCIAL (base) -->
-  <meta property="og:title" content="EcoRappTech – Consulenze e Comunità Energetiche">
-  <meta property="og:description" content="Consulenze tecniche, commerciali e amministrative. Supporto a privati, aziende e terzo settore.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanze aziendali e supporto per Comunità Energetiche. Servizi per privati, aziende e terzo settore." />
 
   <style>
+    :root {
+      --primary: #4a90e2;
+      --secondary: #1f3c88;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f4f7fb;
-      color: #2b2b2b;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #4a90e2, #1f3c88);
-      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #ffffff;
+      padding: 60px 20px 50px;
     }
 
-    .header-box {
+    .header-inner {
       max-width: 1100px;
       margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      width: 125%;
+      max-width: 180px;
+    }
+
+    .header-text {
+      flex: 1;
       text-align: center;
     }
 
-    .logo {
-      width: 175px;
-      margin-bottom: 25px;
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 1px;
     }
 
-    h1 {
-      margin: 0 0 18px 0;
-      font-size: 2.8rem;
-      color: #fff;
-    }
-
-    .subtitle {
-      color: #fff;
-      font-size: 1.05rem;
-    }
-
-    .subtitle-second {
-      color: #eaf2ff;
+    .header-text p {
+      margin-top: 15px;
       font-size: 1.05rem;
     }
 
     nav {
-      background: #fff;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       text-align: center;
       padding: 12px 0;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
     }
 
     nav a {
-      margin: 0 18px;
+      margin: 0 16px;
       text-decoration: none;
-      color: #4a90e2;
+      color: var(--primary);
       font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
     }
 
     .container {
@@ -79,7 +92,7 @@
     }
 
     .card {
-      background: #ffffff;
+      background: var(--card);
       border-radius: 14px;
       padding: 35px;
       margin-bottom: 35px;
@@ -88,16 +101,39 @@
 
     .card h2 {
       margin-top: 0;
-      color: #1f3c88;
+      color: var(--secondary);
       font-size: 1.8rem;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
     footer {
-      background: #1f3c88;
-      color: #fff;
+      background: var(--secondary);
+      color: #ffffff;
       text-align: center;
-      padding: 25px;
+      padding: 25px 15px;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo img {
+        max-width: 150px;
+      }
+
+      .header-text h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -105,18 +141,18 @@
 <body>
 
 <header>
-  <div class="header-box">
-    <img src="logo-ecorapptech.png" alt="Logo EcoRappTech" class="logo">
-
-    <!-- H1 UNICO (importantissimo SEO) -->
-    <h1>EcoRappTech</h1>
-
-    <div class="subtitle">
-      Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza · Comunità Energetiche
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-ecorapptech.png" alt="EcoRappTech Logo">
     </div>
 
-    <div class="subtitle-second">
-      Servizi per Privati, Aziende e Terzo Settore
+    <div class="header-text">
+      <h1>EcoRappTech</h1>
+      <p>
+        Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
+        Attivazione Comunità Energetiche<br>
+        Servizi per Privati, Aziende e Terzo Settore
+      </p>
     </div>
   </div>
 </header>
@@ -129,14 +165,16 @@
 </nav>
 
 <div class="container" id="home">
-
   <div class="card">
     <h2>Consulenze e supporto operativo</h2>
     <p>
-      EcoRappTech fornisce consulenze tecniche, commerciali e amministrative
-      a supporto di privati, aziende ed enti del terzo settore.
-      Operiamo su tutto il territorio nazionale con un approccio concreto
-      e orientato ai risultati.
+      EcoRappTech fornisce consulenze tecniche, commerciali e amministrative a supporto
+      di privati, aziende ed enti del terzo settore.
+    </p>
+    <p>
+      Operiamo con un approccio concreto e orientato ai risultati, affiancando i nostri
+      interlocutori nella gestione, nello sviluppo e nell’organizzazione delle attività
+      economiche e progettuali.
     </p>
   </div>
 
@@ -147,15 +185,21 @@
       commerciali e amministrative per accompagnare lo sviluppo di progetti
       sostenibili e iniziative legate all’energia e all’organizzazione aziendale.
     </p>
+    <p>
+      Lavoriamo come partner operativo, supportando l’analisi, la pianificazione
+      e l’attuazione di soluzioni concrete, favorendo la collaborazione tra
+      soggetti pubblici, privati e del terzo settore.
+    </p>
   </div>
 
   <div class="card" id="services">
     <h2>Servizi</h2>
     <ul>
       <li>Consulenze tecniche e amministrative</li>
-      <li>Sviluppo e rappresentanza commerciale</li>
-      <li>Supporto per Comunità Energetiche Rinnovabili</li>
-      <li>Servizi per enti e terzo settore</li>
+      <li>Consulenze e sviluppo commerciale</li>
+      <li>Agenzia di rappresentanza aziendale</li>
+      <li>Supporto e attivazione Comunità Energetiche Rinnovabili</li>
+      <li>Servizi per privati, aziende e organizzazioni del terzo settore</li>
     </ul>
   </div>
 
@@ -164,7 +208,6 @@
     <p>Email: <strong>ecorapptech@gmail.com</strong></p>
     <p>Operativi su tutto il territorio nazionale</p>
   </div>
-
 </div>
 
 <footer>
