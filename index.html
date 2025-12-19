@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoRappTech – Consulenze e Comunità Energetiche</title>
   <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanza aziendale e supporto per Comunità Energetiche." />
+
   <style>
     :root {
       --primary: #4a90e2;
@@ -24,22 +25,36 @@
       line-height: 1.6;
     }
 
+    /* HEADER CON LOGO A SINISTRA */
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      padding: 70px 20px 50px;
-      text-align: center;
+      padding: 60px 20px;
     }
 
-    header h1 {
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
+    }
+
+    .header-text h1 {
       margin: 0;
       font-size: 2.6rem;
       letter-spacing: 1px;
     }
 
-    header p {
+    .header-text p {
       max-width: 800px;
-      margin: 20px auto 0;
+      margin: 15px 0 0;
       font-size: 1.05rem;
       opacity: 0.95;
     }
@@ -59,7 +74,6 @@
       text-decoration: none;
       color: var(--primary);
       font-weight: 600;
-      transition: color 0.2s ease;
     }
 
     nav a:hover {
@@ -110,22 +124,43 @@
       font-size: 0.9rem;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      nav a { margin: 0 10px; }
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        width: 100px;
+      }
+
+      .header-text h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>EcoRappTech</h1>
-  <p>
-    Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
-    Attivazione Comunità Energetiche
-    <br />
-    Servizi per Privati, Aziende e Terzo Settore
-  </p>
+  <div class="header-content">
+    <img src="logo-ecorapptech.png" alt="EcoRappTech Logo" class="logo">
+
+    <div class="header-text">
+      <h1>EcoRappTech</h1>
+      <p>
+        Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
+        Attivazione Comunità Energetiche<br>
+        <strong>Servizi per Privati, Aziende e Terzo Settore</strong>
+      </p>
+    </div>
+  </div>
 </header>
 
 <nav>
@@ -136,6 +171,7 @@
 </nav>
 
 <div class="container" id="home">
+
   <div class="card">
     <h2>Benvenuti</h2>
     <p>
@@ -179,6 +215,7 @@
     <p>Email: <strong>ecorapptech@gmail.com</strong></p>
     <p>Operativi su tutto il territorio nazionale</p>
   </div>
+
 </div>
 
 <footer>
