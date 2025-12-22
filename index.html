@@ -16,9 +16,7 @@
       --text: #2b2b2b;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -44,24 +42,12 @@
     }
 
     .logo img {
-      width: 125%;
       max-width: 180px;
     }
 
     .header-text {
       flex: 1;
       text-align: center;
-    }
-
-    .header-text h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      letter-spacing: 1px;
-    }
-
-    .header-text p {
-      margin-top: 15px;
-      font-size: 1.05rem;
     }
 
     nav {
@@ -81,14 +67,31 @@
       font-weight: 600;
     }
 
-    nav a:hover {
+    /* LAYOUT 3 COLONNE */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr 320px;
+      gap: 25px;
+      max-width: 1400px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .sidebar {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      font-size: 0.95rem;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
       color: var(--secondary);
     }
 
     .container {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
+      max-width: 100%;
     }
 
     .card {
@@ -99,20 +102,6 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
-    .card h2 {
-      margin-top: 0;
-      color: var(--secondary);
-      font-size: 1.8rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
     footer {
       background: var(--secondary);
       color: #ffffff;
@@ -121,18 +110,9 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      .header-inner {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .logo img {
-        max-width: 150px;
-      }
-
-      .header-text h1 {
-        font-size: 2rem;
+    @media (max-width: 1100px) {
+      .main-layout {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -145,7 +125,6 @@
     <div class="logo">
       <img src="logo-ecorapptech.png" alt="EcoRappTech Logo">
     </div>
-
     <div class="header-text">
       <h1>EcoRappTech</h1>
       <p>
@@ -164,79 +143,73 @@
   <a href="#contact">Contatti</a>
 </nav>
 
-<div class="container" id="home">
-  <div class="card">
-    <h2>Consulenze e supporto operativo</h2>
-    <p>
-      EcoRappTech fornisce consulenze tecniche, commerciali e amministrative a supporto
-      di privati, aziende ed enti del terzo settore.
-    </p>
-    <p>
-      Operiamo con un approccio concreto e orientato ai risultati, affiancando i nostri
-      interlocutori nella gestione, nello sviluppo e nell’organizzazione delle attività
-      economiche e progettuali.
-    </p>
+<div class="main-layout">
+
+  <!-- COLONNA SINISTRA -->
+  <aside class="sidebar">
+    <h3>Prodotti e Soluzioni</h3>
+    <ul>
+      <li>Forniture Energia Elettrica e Gas</li>
+      <li>Volture e Nuove Attivazioni</li>
+      <li>Nuovi Contatori e Cabine</li>
+      <li>Impianti Fotovoltaici</li>
+      <li>Wall Box e Ricarica Elettrica</li>
+      <li>Impianti Termici</li>
+      <li>Comunità Energetiche (CER / AUC)</li>
+      <li>Monitoraggio Flussi Energetici</li>
+      <li>EGE e Diagnosi Energetiche</li>
+      <li>sanitàg coorporation</li>
+    </ul>
+  </aside>
+
+  <!-- CONTENUTO CENTRALE (INVARIATO) -->
+  <div class="container" id="home">
+
+    <div class="card">
+      <h2>Consulenze e supporto operativo</h2>
+      <p>
+        EcoRappTech fornisce consulenze tecniche, commerciali e amministrative a supporto
+        di privati, aziende ed enti del terzo settore.
+      </p>
+      <p>
+        Operiamo con un approccio concreto e orientato ai risultati.
+      </p>
+    </div>
+
+    <div class="card" id="about">
+      <h2>Chi siamo</h2>
+      <p>
+        EcoRappTech è una realtà indipendente che integra competenze tecniche,
+        commerciali e amministrative.
+      </p>
+    </div>
+
+    <div class="card" id="services">
+      <h2>Servizi</h2>
+      <p>Consulenze tecniche, sviluppo commerciale, rappresentanza aziendale e Comunità Energetiche.</p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contatti</h2>
+      <p>Email: <strong>ecorapptech@gmail.com</strong></p>
+      <p>Operativi su tutto il territorio nazionale</p>
+    </div>
+
   </div>
 
-  <div class="card" id="about">
-    <h2>Chi siamo</h2>
-    <p>
-      EcoRappTech è una realtà indipendente che integra competenze tecniche,
-      commerciali e amministrative per accompagnare lo sviluppo di progetti
-      sostenibili e iniziative legate all’energia e all’organizzazione aziendale.
-    </p>
-    <p>
-      Lavoriamo come partner operativo, supportando l’analisi, la pianificazione
-      e l’attuazione di soluzioni concrete, favorendo la collaborazione tra
-      soggetti pubblici, privati e del terzo settore.
-    </p>
-  </div>
+  <!-- COLONNA DESTRA -->
+  <aside class="sidebar">
+    <h3>Richiedi informazioni</h3>
+    <form>
+      <input type="text" placeholder="Nome" style="width:100%; margin-bottom:10px;">
+      <input type="email" placeholder="Email" style="width:100%; margin-bottom:10px;">
+      <textarea placeholder="Messaggio" style="width:100%; height:100px;"></textarea><br><br>
+      <button style="background:var(--primary);color:#fff;border:none;padding:10px 15px;border-radius:6px;">
+        Invia richiesta
+      </button>
+    </form>
+  </aside>
 
- <div class="card" id="services">
-  <h2>Servizi</h2>
-
-  <h3>Consulenze Tecniche e Amministrative</h3>
-  <p>
-    Supportiamo privati, aziende ed enti del terzo settore nella gestione tecnica
-    e amministrativa delle attività, affiancando i clienti
-    nell’organizzazione dei processi, nella documentazione e nel coordinamento operativo.
-  </p>
-
-  <h3>Consulenze e Sviluppo Commerciale</h3>
-  <p>
-    Affianchiamo imprese e professionisti nello sviluppo commerciale,
-    nella ricerca di opportunità di mercato, nel consolidamento dei rapporti
-    con clienti e partner e nella definizione di strategie di crescita sostenibili.
-  </p>
-
-  <h3>Agenzia di Rappresentanza Aziendale</h3>
-  <p>
-    Operiamo come agenzia di rappresentanza per aziende e realtà imprenditoriali,
-    facilitando il contatto con nuovi clienti, la promozione di prodotti e servizi
-    e il presidio commerciale sul territorio.
-  </p>
-
-  <h3>Comunità Energetiche Rinnovabili</h3>
-  <p>
-    Forniamo supporto tecnico, organizzativo e operativo per la creazione
-    e l’attivazione di Comunità Energetiche Rinnovabili,
-    accompagnando i soggetti coinvolti in tutte le fasi del progetto.
-  </p>
-
-  <h3>Servizi per Privati, Aziende e Terzo Settore</h3>
-  <p>
-    Offriamo servizi personalizzati rivolti a privati, imprese
-    ed enti del terzo settore, con un approccio flessibile
-    e orientato alle esigenze specifiche di ogni realtà.
-  </p>
-</div>
-
-
-  <div class="card" id="contact">
-    <h2>Contatti</h2>
-    <p>Email: <strong>ecorapptech@gmail.com</strong></p>
-    <p>Operativi su tutto il territorio nazionale</p>
-  </div>
 </div>
 
 <footer>
@@ -245,3 +218,4 @@
 
 </body>
 </html>
+
