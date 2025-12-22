@@ -23,26 +23,25 @@
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #ffffff;
-      padding: 60px 20px 50px;
+      color: #fff;
+      padding: 50px 20px;
     }
 
     .header-inner {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: auto;
       display: flex;
       align-items: center;
       gap: 30px;
-      flex-wrap: wrap;
     }
 
     .logo img {
-      max-width: 180px;
+      max-width: 170px;
     }
 
     .header-text {
@@ -50,18 +49,19 @@
       text-align: center;
     }
 
+    /* NAV */
     nav {
-      background: #ffffff;
+      background: #fff;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 10;
-      text-align: center;
-      padding: 12px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     nav a {
-      margin: 0 16px;
+      margin: 0 18px;
       text-decoration: none;
       color: var(--primary);
       font-weight: 600;
@@ -69,51 +69,72 @@
 
     /* LAYOUT 3 COLONNE */
     .main-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr 320px;
-      gap: 25px;
       max-width: 1400px;
-      margin: 50px auto;
+      margin: 40px auto;
       padding: 0 20px;
+      display: grid;
+      grid-template-columns: 260px 1fr 300px;
+      gap: 30px;
     }
 
-    .sidebar {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      font-size: 0.95rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      color: var(--secondary);
-    }
-
-    .container {
-      max-width: 100%;
+    /* COLONNE */
+    .sidebar,
+    .content,
+    .aside {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
     }
 
     .card {
       background: var(--card);
       border-radius: 14px;
-      padding: 35px;
-      margin-bottom: 35px;
+      padding: 25px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* FORM */
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--secondary);
     }
 
     footer {
       background: var(--secondary);
-      color: #ffffff;
+      color: #fff;
       text-align: center;
       padding: 25px 15px;
+      margin-top: 40px;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 1100px) {
-      .main-layout {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -128,8 +149,7 @@
     <div class="header-text">
       <h1>EcoRappTech</h1>
       <p>
-        Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza ·
-        Attivazione Comunità Energetiche<br>
+        Consulenze Tecniche, Commerciali e Amministrative · Agenzia di Rappresentanza · Attivazione Comunità Energetiche<br>
         Servizi per Privati, Aziende e Terzo Settore
       </p>
     </div>
@@ -147,67 +167,76 @@
 
   <!-- COLONNA SINISTRA -->
   <aside class="sidebar">
-    <h3>Prodotti e Soluzioni</h3>
-    <ul>
-      <li>Forniture Energia Elettrica e Gas</li>
-      <li>Volture e Nuove Attivazioni</li>
-      <li>Nuovi Contatori e Cabine</li>
-      <li>Impianti Fotovoltaici</li>
-      <li>Wall Box e Ricarica Elettrica</li>
-      <li>Impianti Termici</li>
-      <li>Comunità Energetiche (CER / AUC)</li>
-      <li>Monitoraggio Flussi Energetici</li>
-      <li>EGE e Diagnosi Energetiche</li>
-      <li>sanitàg coorporation</li>
-    </ul>
+    <div class="card">
+      <h3>Prodotti e Soluzioni</h3>
+      <ul>
+        <li>Forniture Energia Elettrica e Gas</li>
+        <li>Volture e Nuove Attivazioni</li>
+        <li>Impianti Fotovoltaici</li>
+        <li>Wall Box e Ricarica Elettrica</li>
+        <li>Impianti Termici</li>
+        <li>Power Bank Energetici</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Energia Condivisa</h3>
+      <p>
+        Creiamo Comunità Energetiche Rinnovabili (CER) e Gruppi di Autoconsumo (AUC).
+      </p>
+    </div>
   </aside>
 
-  <!-- CONTENUTO CENTRALE (INVARIATO) -->
-  <div class="container" id="home">
+  <!-- COLONNA CENTRALE -->
+  <main class="content" id="home">
 
     <div class="card">
       <h2>Consulenze e supporto operativo</h2>
       <p>
-        EcoRappTech fornisce consulenze tecniche, commerciali e amministrative a supporto
-        di privati, aziende ed enti del terzo settore.
-      </p>
-      <p>
-        Operiamo con un approccio concreto e orientato ai risultati.
+        EcoRappTech fornisce consulenze tecniche, commerciali e amministrative
+        a supporto di privati, aziende ed enti del terzo settore.
       </p>
     </div>
 
     <div class="card" id="about">
       <h2>Chi siamo</h2>
       <p>
-        EcoRappTech è una realtà indipendente che integra competenze tecniche,
-        commerciali e amministrative.
+        Realtà indipendente con competenze multidisciplinari orientate
+        allo sviluppo sostenibile e all’efficienza energetica.
       </p>
     </div>
 
     <div class="card" id="services">
       <h2>Servizi</h2>
-      <p>Consulenze tecniche, sviluppo commerciale, rappresentanza aziendale e Comunità Energetiche.</p>
+      <p>Consulenze, rappresentanza, comunità energetiche e supporto operativo.</p>
     </div>
 
     <div class="card" id="contact">
       <h2>Contatti</h2>
       <p>Email: <strong>ecorapptech@gmail.com</strong></p>
-      <p>Operativi su tutto il territorio nazionale</p>
     </div>
 
-  </div>
+  </main>
 
   <!-- COLONNA DESTRA -->
-  <aside class="sidebar">
-    <h3>Richiedi informazioni</h3>
-    <form>
-      <input type="text" placeholder="Nome" style="width:100%; margin-bottom:10px;">
-      <input type="email" placeholder="Email" style="width:100%; margin-bottom:10px;">
-      <textarea placeholder="Messaggio" style="width:100%; height:100px;"></textarea><br><br>
-      <button style="background:var(--primary);color:#fff;border:none;padding:10px 15px;border-radius:6px;">
-        Invia richiesta
-      </button>
-    </form>
+  <aside class="aside">
+    <div class="card">
+      <h3>Richiedi Informazioni</h3>
+      <form>
+        <input type="text" placeholder="Nome e Cognome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Richiesta informazioni o preventivo"></textarea>
+        <button type="submit">Invia richiesta</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>sanitàg coorporation</h3>
+      <p>
+        Soluzioni digitali, sistemi brevettati e gestione dati
+        per ambito sanitario umano e animale.
+      </p>
+    </div>
   </aside>
 
 </div>
