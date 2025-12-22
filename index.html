@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoRappTech – Consulenze Tecniche e Comunità Energetiche</title>
 
-  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanze aziendali e supporto per Comunità Energetiche. Servizi per privati, aziende e terzo settore." />
+  <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, rappresentanze aziendali e supporto per Comunità Energetiche." />
 
   <style>
     :root {
@@ -23,6 +23,7 @@
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
 
     /* HEADER */
@@ -67,20 +68,25 @@
       font-weight: 600;
     }
 
-    /* LAYOUT 3 COLONNE */
+    /* LAYOUT 2 COLONNE */
     .main-layout {
       max-width: 1400px;
       margin: 40px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: 260px 1fr 300px;
-      gap: 30px;
+      grid-template-columns: 1fr 340px;
+      gap: 40px;
     }
 
-    /* COLONNE */
-    .sidebar,
-    .content,
-    .aside {
+    /* CONTENUTO SINISTRO (INDEX ORIGINALE) */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    /* COLONNA DESTRA (SERVIZI / PRODOTTI) */
+    .sidebar {
       display: flex;
       flex-direction: column;
       gap: 25px;
@@ -89,7 +95,7 @@
     .card {
       background: var(--card);
       border-radius: 14px;
-      padding: 25px;
+      padding: 30px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
@@ -103,29 +109,7 @@
     }
 
     ul li {
-      margin-bottom: 8px;
-    }
-
-    /* FORM */
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-    }
-
-    button {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: var(--secondary);
+      margin-bottom: 10px;
     }
 
     footer {
@@ -135,6 +119,12 @@
       padding: 25px 15px;
       margin-top: 40px;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -165,78 +155,89 @@
 
 <div class="main-layout">
 
-  <!-- COLONNA SINISTRA -->
-  <aside class="sidebar">
-    <div class="card">
-      <h3>Prodotti e Soluzioni</h3>
-      <ul>
-        <li>Forniture Energia Elettrica e Gas</li>
-        <li>Volture e Nuove Attivazioni</li>
-        <li>Impianti Fotovoltaici</li>
-        <li>Wall Box e Ricarica Elettrica</li>
-        <li>Impianti Termici</li>
-        <li>Power Bank Energetici</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Energia Condivisa</h3>
-      <p>
-        Creiamo Comunità Energetiche Rinnovabili (CER) e Gruppi di Autoconsumo (AUC).
-      </p>
-    </div>
-  </aside>
-
-  <!-- COLONNA CENTRALE -->
+  <!-- SINISTRA: INDEX ORIGINALE -->
   <main class="content" id="home">
 
     <div class="card">
       <h2>Consulenze e supporto operativo</h2>
       <p>
-        EcoRappTech fornisce consulenze tecniche, commerciali e amministrative
-        a supporto di privati, aziende ed enti del terzo settore.
+        EcoRappTech fornisce consulenze tecniche, commerciali e amministrative a supporto
+        di privati, aziende ed enti del terzo settore.
+      </p>
+      <p>
+        Operiamo con un approccio concreto e orientato ai risultati,
+        affiancando i nostri interlocutori nella gestione,
+        nello sviluppo e nell’organizzazione delle attività economiche e progettuali.
       </p>
     </div>
 
     <div class="card" id="about">
       <h2>Chi siamo</h2>
       <p>
-        Realtà indipendente con competenze multidisciplinari orientate
-        allo sviluppo sostenibile e all’efficienza energetica.
+        EcoRappTech è una realtà indipendente che integra competenze tecniche,
+        commerciali e amministrative per accompagnare lo sviluppo di progetti
+        sostenibili e iniziative legate all’energia.
       </p>
     </div>
 
     <div class="card" id="services">
       <h2>Servizi</h2>
-      <p>Consulenze, rappresentanza, comunità energetiche e supporto operativo.</p>
+
+      <h3>Consulenze Tecniche e Amministrative</h3>
+      <p>Gestione tecnica, amministrativa e organizzativa delle attività.</p>
+
+      <h3>Consulenze e Sviluppo Commerciale</h3>
+      <p>Supporto allo sviluppo commerciale e alle strategie di crescita.</p>
+
+      <h3>Agenzia di Rappresentanza Aziendale</h3>
+      <p>Promozione di prodotti e servizi e presidio commerciale.</p>
+
+      <h3>Comunità Energetiche Rinnovabili</h3>
+      <p>Creazione e gestione di CER e gruppi di autoconsumo.</p>
     </div>
 
     <div class="card" id="contact">
       <h2>Contatti</h2>
       <p>Email: <strong>ecorapptech@gmail.com</strong></p>
+      <p>Operativi su tutto il territorio nazionale</p>
     </div>
 
   </main>
 
-  <!-- COLONNA DESTRA -->
-  <aside class="aside">
+  <!-- DESTRA: PRODOTTI / SOLUZIONI -->
+  <aside class="sidebar">
+
     <div class="card">
-      <h3>Richiedi Informazioni</h3>
-      <form>
-        <input type="text" placeholder="Nome e Cognome" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="4" placeholder="Richiesta informazioni o preventivo"></textarea>
-        <button type="submit">Invia richiesta</button>
-      </form>
+      <h3>Prodotti e Soluzioni</h3>
+      <ul>
+        <li>Forniture Energia Elettrica e Gas</li>
+        <li>Volture e Nuove Attivazioni</li>
+        <li>Nuovi Contatori e Cabine</li>
+        <li>Impianti Fotovoltaici</li>
+        <li>Wall Box e Stazioni di Ricarica</li>
+        <li>Impianti di Raffrescamento e Riscaldamento</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Comunità Energetiche</h3>
+      <p>
+        Creiamo Comunità Energetiche Rinnovabili (C.E.R.)
+        e Gruppi di Autoconsumo (AUC).
+      </p>
+      <p>
+        Forniamo consulenza, piattaforma e strumenti di monitoraggio.
+      </p>
     </div>
 
     <div class="card">
       <h3>sanitàg coorporation</h3>
       <p>
-        Soluzioni digitali, sistemi brevettati e gestione dati
-        per ambito sanitario umano e animale.
+        Area dedicata a soluzioni digitali e sistemi brevettati
+        per la gestione sanitaria umana e animale.
       </p>
     </div>
+
   </aside>
 
 </div>
