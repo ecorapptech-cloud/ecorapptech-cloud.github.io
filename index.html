@@ -239,7 +239,8 @@
 
   <h3>Richiesta informazioni / preventivo</h3>
 
-  <form action="mailto:ecorapptech@gmail.com" method="post" enctype="text/plain">
+ <form action="mailto:ecorapptech@gmail.com" method="post" enctype="text/plain" onsubmit="setTimeout(() => this.reset(), 100);">
+
 
     <strong>Profilo del richiedente</strong><br>
     <select name="Profilo" required style="width:100%; padding:10px; margin-bottom:15px;">
