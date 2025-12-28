@@ -237,45 +237,71 @@
 
   <hr style="margin:30px 0;">
 
-  <h2>Richiedi informazioni</h2>
+  <h3>Richiesta informazioni / preventivo</h3>
 
   <p>
-    Compila il modulo sottostante per essere ricontattato.
-    Un operatore EcoRappTech prenderà in carico la tua richiesta
-    e ti risponderà secondo le modalità indicate.
+    Compilando il modulo sottostante, la richiesta verrà presa in carico
+    da un operatore EcoRappTech che ti contatterà secondo le modalità indicate.
   </p>
 
   <form id="contactForm"
         action="mailto:ecorapptech@gmail.com"
         method="post"
         enctype="text/plain"
-        onsubmit="showConfirmation()">
+        onsubmit="handleSubmit();">
 
-    <label><strong>Nome e Cognome</strong></label><br>
-    <input type="text" name="Nome" required
-           style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <strong>Profilo del richiedente</strong><br>
+    <select name="Profilo" required style="width:100%; padding:10px; margin-bottom:15px;">
+      <option value="">Seleziona</option>
+      <option>Privato</option>
+      <option>Attività / Impresa</option>
+      <option>Ente</option>
+      <option>Organizzazione del Terzo Settore</option>
+    </select>
 
-    <label><strong>Email</strong></label><br>
+    <strong>Nome e Cognome</strong><br>
+    <input type="text" name="Nome e Cognome" required
+           style="width:100%; padding:10px; margin-bottom:15px;">
+
+    <strong>Ragione Sociale / Ente (se applicabile)</strong><br>
+    <input type="text" name="Ragione Sociale"
+           style="width:100%; padding:10px; margin-bottom:15px;">
+
+    <strong>Argomento della richiesta</strong><br>
+    <select name="Argomento" required style="width:100%; padding:10px; margin-bottom:15px;">
+      <option value="">Seleziona</option>
+      <option>Consulenze Tecniche e Amministrative</option>
+      <option>Consulenze e Sviluppo Commerciale</option>
+      <option>Comunità Energetiche Rinnovabili</option>
+      <option>Forniture energetiche</option>
+      <option>Impianti e Infrastrutture</option>
+      <option>Monitoraggio Energetico & Dati</option>
+      <option>Servizi Professionali Specialistici</option>
+    </select>
+
+    <strong>Email</strong><br>
     <input type="email" name="Email" required
-           style="width:100%; padding:10px; margin-bottom:15px;"><br>
+           style="width:100%; padding:10px; margin-bottom:15px;">
 
-    <label><strong>Tipologia di richiesta</strong></label><br>
-    <select name="Richiesta"
+    <strong>Telefono</strong><br>
+    <input type="tel" name="Telefono"
+           style="width:100%; padding:10px; margin-bottom:15px;">
+
+    <strong>Fascia oraria preferita per il contatto</strong><br>
+    <select name="Fascia oraria"
             style="width:100%; padding:10px; margin-bottom:15px;">
-      <option>Informazioni generali</option>
-      <option>Consulenze tecniche e amministrative</option>
-      <option>Energia e impianti</option>
-      <option>Comunità energetiche</option>
-      <option>Sistemi digitali certificati per ambienti critici</option>
-    </select><br>
+      <option>Mattina (9:00 – 12:00)</option>
+      <option>Pomeriggio (14:00 – 18:00)</option>
+      <option>Indifferente</option>
+    </select>
 
-    <label><strong>Messaggio</strong></label><br>
+    <strong>Messaggio</strong><br>
     <textarea name="Messaggio" rows="5" required
               style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
 
     <button type="submit"
             style="background:#4a90e2; color:white; border:none;
-                   padding:12px 25px; font-size:1rem;
+                   padding:12px 30px; font-size:1rem;
                    border-radius:6px; cursor:pointer;">
       Invia richiesta
     </button>
@@ -291,23 +317,23 @@
     </div>
   </div>
 
-  <div class="highlight" style="margin-top:25px;">
-    <strong>Privacy e trattamento dati (GDPR)</strong><br>
-    I dati inseriti sono trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
-    e utilizzati esclusivamente per rispondere alla richiesta.
-    I dati non vengono ceduti a terzi e sono gestiti con adeguate misure di sicurezza.
+  <div class="highlight" style="margin-top:30px;">
+    <strong>Privacy e trattamento dei dati (GDPR)</strong><br>
+    I dati forniti saranno trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
+    esclusivamente per dare seguito alla richiesta.
+    I dati non saranno ceduti a terzi e saranno gestiti con adeguate misure di sicurezza.
   </div>
 </div>
 
 <script>
-  function showConfirmation() {
+  function handleSubmit() {
     setTimeout(function () {
       document.getElementById("contactForm").style.display = "none";
       document.getElementById("confirmationMessage").style.display = "block";
+      document.getElementById("contactForm").reset();
     }, 500);
   }
 </script>
-
 
 
   </main>
