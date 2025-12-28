@@ -237,74 +237,76 @@
 
   <hr style="margin:30px 0;">
 
-  <h3>Richiesta informazioni / preventivo</h3>
+  <h2>Richiedi informazioni</h2>
 
- <form action="mailto:ecorapptech@gmail.com" method="post" enctype="text/plain" onsubmit="setTimeout(() => this.reset(), 100);">
+  <p>
+    Compila il modulo sottostante per essere ricontattato.
+    Un operatore EcoRappTech prenderà in carico la tua richiesta
+    e ti risponderà secondo le modalità indicate.
+  </p>
 
+  <form id="contactForm"
+        action="mailto:ecorapptech@gmail.com"
+        method="post"
+        enctype="text/plain"
+        onsubmit="showConfirmation()">
 
-    <strong>Profilo del richiedente</strong><br>
-    <select name="Profilo" required style="width:100%; padding:10px; margin-bottom:15px;">
-      <option value="">Seleziona</option>
-      <option>Privato</option>
-      <option>Attività / Impresa</option>
-      <option>Ente</option>
-      <option>Organizzazione del Terzo Settore</option>
-    </select>
+    <label><strong>Nome e Cognome</strong></label><br>
+    <input type="text" name="Nome" required
+           style="width:100%; padding:10px; margin-bottom:15px;"><br>
 
-    <strong>Nome e Cognome</strong><br>
-    <input type="text" name="Nome e Cognome" required style="width:100%; padding:10px; margin-bottom:15px;">
+    <label><strong>Email</strong></label><br>
+    <input type="email" name="Email" required
+           style="width:100%; padding:10px; margin-bottom:15px;"><br>
 
-    <strong>Ragione Sociale / Ente (se applicabile)</strong><br>
-    <input type="text" name="Ragione Sociale" style="width:100%; padding:10px; margin-bottom:15px;">
+    <label><strong>Tipologia di richiesta</strong></label><br>
+    <select name="Richiesta"
+            style="width:100%; padding:10px; margin-bottom:15px;">
+      <option>Informazioni generali</option>
+      <option>Consulenze tecniche e amministrative</option>
+      <option>Energia e impianti</option>
+      <option>Comunità energetiche</option>
+      <option>Sistemi digitali certificati per ambienti critici</option>
+    </select><br>
 
-    <strong>Argomento della richiesta</strong><br>
-    <select name="Argomento" required style="width:100%; padding:10px; margin-bottom:15px;">
-      <option value="">Seleziona</option>
-      <option>Consulenze Tecniche e Amministrative</option>
-      <option>Consulenze e Sviluppo Commerciale</option>
-      <option>Comunità Energetiche Rinnovabili</option>
-      <option>Forniture energetiche</option>
-      <option>Impianti e Infrastrutture</option>
-      <option>Monitoraggio Energetico & Dati</option>
-      <option>Servizi Professionali Specialistici</option>
-    </select>
+    <label><strong>Messaggio</strong></label><br>
+    <textarea name="Messaggio" rows="5" required
+              style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
 
-    <strong>Email</strong><br>
-    <input type="email" name="Email" style="width:100%; padding:10px; margin-bottom:15px;">
-
-    <strong>Telefono</strong><br>
-    <input type="tel" name="Telefono" style="width:100%; padding:10px; margin-bottom:15px;">
-
-    <strong>Fascia oraria preferita per il contatto</strong><br>
-    <select name="Fascia oraria" style="width:100%; padding:10px; margin-bottom:15px;">
-      <option>Mattina (9:00 – 12:00)</option>
-      <option>Pomeriggio (14:00 – 18:00)</option>
-      <option>Indifferente</option>
-    </select>
-
-    <strong>Messaggio</strong><br>
-    <textarea name="Messaggio" rows="5" required style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
-
-    <button type="submit" style="
-      background:#4a90e2;
-      color:white;
-      border:none;
-      padding:12px 30px;
-      font-size:1rem;
-      border-radius:6px;
-      cursor:pointer;
-    ">
+    <button type="submit"
+            style="background:#4a90e2; color:white; border:none;
+                   padding:12px 25px; font-size:1rem;
+                   border-radius:6px; cursor:pointer;">
       Invia richiesta
     </button>
   </form>
 
-  <div class="highlight" style="margin-top:30px;">
-    <strong>Privacy e trattamento dei dati (GDPR)</strong><br>
-    I dati forniti saranno trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
-    esclusivamente per dare seguito alla richiesta.
-    I dati non saranno ceduti a terzi e saranno gestiti con adeguate misure di sicurezza.
+  <!-- MESSAGGIO DI CONFERMA -->
+  <div id="confirmationMessage" style="display:none; margin-top:30px;">
+    <div class="highlight">
+      <strong>Richiesta inviata correttamente</strong><br><br>
+      La tua richiesta è stata ricevuta dal team EcoRappTech.<br>
+      Un nostro operatore qualificato prenderà in carico la comunicazione
+      e ti contatterà secondo le modalità indicate.
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:25px;">
+    <strong>Privacy e trattamento dati (GDPR)</strong><br>
+    I dati inseriti sono trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
+    e utilizzati esclusivamente per rispondere alla richiesta.
+    I dati non vengono ceduti a terzi e sono gestiti con adeguate misure di sicurezza.
   </div>
 </div>
+
+<script>
+  function showConfirmation() {
+    setTimeout(function () {
+      document.getElementById("contactForm").style.display = "none";
+      document.getElementById("confirmationMessage").style.display = "block";
+    }, 500);
+  }
+</script>
 
 
 
