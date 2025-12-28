@@ -229,26 +229,21 @@
   </p>
 
   <p>
-    Siamo a disposizione per fornire informazioni, approfondimenti
-    e valutazioni preliminari sui nostri servizi e sulle soluzioni proposte.
-    Le richieste vengono prese in carico e riscontrate in modo puntuale
-    dal nostro team.
+    Il modulo sottostante consente di inviare una richiesta di informazioni
+    o di valutazione preliminare sui nostri servizi.
+    Le richieste vengono prese in carico dal nostro team
+    e riscontrate tramite i recapiti indicati.
   </p>
 
   <hr style="margin:30px 0;">
 
   <h3>Richiesta informazioni / preventivo</h3>
 
-  <p>
-    Compilando il modulo sottostante, la richiesta verrà presa in carico
-    da un operatore EcoRappTech che ti contatterà secondo le modalità indicate.
-  </p>
-
   <form id="contactForm"
         action="mailto:ecorapptech@gmail.com"
         method="post"
         enctype="text/plain"
-        onsubmit="handleSubmit();">
+        onsubmit="handleSubmitAndRedirect();">
 
     <strong>Profilo del richiedente</strong><br>
     <select name="Profilo" required style="width:100%; padding:10px; margin-bottom:15px;">
@@ -279,7 +274,7 @@
       <option>Servizi Professionali Specialistici</option>
     </select>
 
-    <strong>Email</strong><br>
+    <strong>Email (obbligatoria)</strong><br>
     <input type="email" name="Email" required
            style="width:100%; padding:10px; margin-bottom:15px;">
 
@@ -299,29 +294,26 @@
     <textarea name="Messaggio" rows="5" required
               style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
 
-    <button type="submit"
-            style="background:#4a90e2; color:white; border:none;
-                   padding:12px 30px; font-size:1rem;
-                   border-radius:6px; cursor:pointer;">
+    <button type="submit" style="
+      background:#4a90e2;
+      color:white;
+      border:none;
+      padding:12px 30px;
+      font-size:1rem;
+      border-radius:6px;
+      cursor:pointer;">
       Invia richiesta
     </button>
   </form>
 
-  <!-- MESSAGGIO DI CONFERMA -->
-  <div id="confirmationMessage" style="display:none; margin-top:30px;">
-    <div class="highlight">
-      <strong>Richiesta inviata correttamente</strong><br><br>
-      La tua richiesta è stata ricevuta dal team EcoRappTech.<br>
-      Un nostro operatore qualificato prenderà in carico la comunicazione
-      e ti contatterà secondo le modalità indicate.
-    </div>
-  </div>
-
   <div class="highlight" style="margin-top:30px;">
     <strong>Privacy e trattamento dei dati (GDPR)</strong><br>
-    I dati forniti saranno trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
-    esclusivamente per dare seguito alla richiesta.
-    I dati non saranno ceduti a terzi e saranno gestiti con adeguate misure di sicurezza.
+    Il conferimento dell’indirizzo email è obbligatorio
+    per consentire la gestione della richiesta e il ricontatto da parte
+    di un operatore EcoRappTech.
+    I dati saranno trattati nel rispetto del Regolamento UE 2016/679 (GDPR),
+    esclusivamente per finalità connesse alla richiesta inviata
+    e non saranno ceduti a terzi.
   </div>
 </div>
 
@@ -450,6 +442,15 @@
 <footer>
   © 2025 EcoRappTech · Tutti i diritti riservati
 </footer>
+
+<script>
+  function handleSubmitAndRedirect() {
+    setTimeout(function () {
+      document.getElementById("contactForm").reset();
+      window.location.href = "#home";
+    }, 500);
+  }
+</script>
 
 </body>
 </html>
