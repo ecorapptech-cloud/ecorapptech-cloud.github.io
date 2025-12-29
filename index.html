@@ -239,11 +239,7 @@
 
   <h3>Richiesta informazioni / preventivo</h3>
 
-  <form id="contactForm"
-        action="mailto:ecorapptech@gmail.com"
-        method="post"
-        enctype="text/plain"
-        onsubmit="handleSubmitAndRedirect();">
+  <form method="POST" action="/contact">
 
     <strong>Profilo del richiedente</strong><br>
     <select name="Profilo" required style="width:100%; padding:10px; margin-bottom:15px;">
@@ -275,7 +271,7 @@
     </select>
 
     <strong>Email (obbligatoria)</strong><br>
-    <input type="email" name="Email" required
+    <input type="email" name="email" required
            style="width:100%; padding:10px; margin-bottom:15px;">
 
     <strong>Telefono</strong><br>
