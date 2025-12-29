@@ -318,11 +318,10 @@
 </div>
 
 <script>
-  function handleSubmit() {
+  function handleSubmitAndRedirect() {
     setTimeout(function () {
-      document.getElementById("contactForm").style.display = "none";
-      document.getElementById("confirmationMessage").style.display = "block";
       document.getElementById("contactForm").reset();
+      window.location.href = "#home";
     }, 500);
   }
 </script>
