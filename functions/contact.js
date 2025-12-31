@@ -40,7 +40,7 @@ ${messaggio}
     })
   });
 
-  /* EMAIL DI CONFERMA UTENTE */
+  /* EMAIL CONFERMA UTENTE */
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
@@ -69,6 +69,6 @@ EcoRappTech`
     });
   }
 
-  /* RITORNO PULITO AL SITO */
-  return Response.redirect("/", 303);
+  /* RISPOSTA PULITA */
+  return new Response(null, { status: 204 });
 }
