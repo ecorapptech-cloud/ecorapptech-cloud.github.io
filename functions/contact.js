@@ -1,4 +1,8 @@
-export async function onRequestPost(context) {
+export async function onRequest(context) {
+  if (context.request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
+  }
+
   const data = await context.request.formData();
 
   const tipo = data.get("tipo");
@@ -28,9 +32,7 @@ ${messaggio}
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      personalizations: [{
-        to: [{ email: "ecorapptech@gmail.com" }]
-      }],
+      personalizations: [{ to: [{ email: "ecorapptech@gmail.com" }] }],
       from: {
         email: "noreply@ecorapptech.pages.dev",
         name: "EcoRappTech"
@@ -40,15 +42,13 @@ ${messaggio}
     })
   });
 
-  /* EMAIL CONFERMA UTENTE */
+  /* EMAIL DI CONFERMA UTENTE */
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        personalizations: [{
-          to: [{ email }]
-        }],
+        personalizations: [{ to: [{ email }] }],
         from: {
           email: "noreply@ecorapptech.pages.dev",
           name: "EcoRappTech"
@@ -61,14 +61,11 @@ ${messaggio}
 abbiamo ricevuto correttamente la sua richiesta.
 Un operatore EcoRappTech la contatterà nel più breve tempo possibile.
 
-Grazie per averci contattato.
-
 EcoRappTech`
         }]
       })
     });
   }
 
-  /* RISPOSTA PULITA */
   return new Response(null, { status: 204 });
 }
