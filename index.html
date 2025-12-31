@@ -234,11 +234,10 @@
     Le richieste vengono prese in carico e riscontrate in modo puntuale dal nostro team.
   </p>
 
-<form action="/contact" method="post">
-
+  <form action="/contact" method="post">
 
     <strong>Tipologia richiedente</strong><br>
-    <select name="Tipologia" required style="width:100%; padding:10px; margin-bottom:15px;">
+    <select name="tipo" required style="width:100%; padding:10px; margin-bottom:15px;">
       <option value="">Seleziona</option>
       <option>Privato</option>
       <option>Azienda</option>
@@ -247,11 +246,11 @@
     </select>
 
     <strong>Nome e Cognome / Ragione Sociale</strong><br>
-    <input type="text" name="Riferimento" required
+    <input type="text" name="nome" required
       style="width:100%; padding:10px; margin-bottom:15px;">
 
     <strong>Argomento della richiesta</strong><br>
-    <select name="Argomento" required style="width:100%; padding:10px; margin-bottom:15px;">
+    <select name="servizio" required style="width:100%; padding:10px; margin-bottom:15px;">
       <option value="">Seleziona</option>
       <option>Consulenze Tecniche e Amministrative</option>
       <option>Consulenze e Sviluppo Commerciale</option>
@@ -263,22 +262,22 @@
     </select>
 
     <strong>Email *</strong><br>
-    <input type="email" name="Email" required
+    <input type="email" name="email" required
       style="width:100%; padding:10px; margin-bottom:15px;">
 
     <strong>Telefono</strong><br>
-    <input type="tel" name="Telefono"
+    <input type="tel" name="telefono"
       style="width:100%; padding:10px; margin-bottom:15px;">
 
     <strong>Fascia oraria preferita per il contatto</strong><br>
-    <select name="Fascia oraria" style="width:100%; padding:10px; margin-bottom:15px;">
+    <select name="fascia" style="width:100%; padding:10px; margin-bottom:15px;">
       <option>Mattina (9:00 – 12:00)</option>
       <option>Pomeriggio (14:00 – 18:00)</option>
       <option>Indifferente</option>
     </select>
 
     <strong>Messaggio</strong><br>
-    <textarea name="Messaggio" rows="5" required
+    <textarea name="messaggio" rows="5" required
       style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
 
     <button type="submit" style="
@@ -300,8 +299,6 @@
     </p>
 
   </form>
-
-
 
   <!-- GDPR -->
   <div class="highlight" style="margin-top:30px;">
