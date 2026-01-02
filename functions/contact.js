@@ -1,4 +1,6 @@
-export async function onRequest(context) {
+export async function onRequestPost(context) {
+  const data = await context.request.formData();
+
 
 
   const data = await context.request.formData();
