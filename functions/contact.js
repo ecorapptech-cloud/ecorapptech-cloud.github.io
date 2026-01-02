@@ -1,9 +1,10 @@
-export async function onRequestPost(context) {
+export async function onRequest(context) {
+  // SE NON È POST → TORNA ALLA HOME
+  if (context.request.method !== "POST") {
+    return Response.redirect("/", 303);
+  }
+
   const data = await context.request.formData();
-
-
-
-
 
   const tipo = data.get("tipo");
   const nome = data.get("nome");
@@ -42,7 +43,7 @@ ${messaggio}
     })
   });
 
-  /* EMAIL DI CONFERMA UTENTE */
+  /* EMAIL CONFERMA UTENTE */
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
@@ -66,5 +67,8 @@ EcoRappTech`
       })
     });
   }
-return Response.redirect("/", 303);
+
+  // TORNA ALLA HOME, SITO PULITO
+  return Response.redirect("/", 303);
+}
 
