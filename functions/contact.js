@@ -3,7 +3,7 @@ export async function onRequestPost(context) {
 
 
 
-  const data = await context.request.formData();
+
 
   const tipo = data.get("tipo");
   const nome = data.get("nome");
