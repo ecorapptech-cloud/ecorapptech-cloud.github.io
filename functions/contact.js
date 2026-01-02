@@ -1,7 +1,5 @@
 export async function onRequest(context) {
-  if (context.request.method !== "POST") {
-    return new Response("Method Not Allowed", { status: 405 });
-  }
+
 
   const data = await context.request.formData();
 
@@ -66,6 +64,5 @@ EcoRappTech`
       })
     });
   }
+return Response.redirect("/", 303);
 
-  return new Response(null, { status: 204 });
-}
