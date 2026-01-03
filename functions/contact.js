@@ -23,7 +23,7 @@ Messaggio:
 ${messaggio}
 `;
 
-  /* EMAIL AZIENDA */
+  // EMAIL AZIENDA
   await fetch("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ ${messaggio}
     })
   });
 
-  /* EMAIL DI CONFERMA UTENTE */
+  // EMAIL DI CONFERMA UTENTE
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
