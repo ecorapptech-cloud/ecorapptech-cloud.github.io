@@ -23,6 +23,7 @@ Messaggio:
 ${messaggio}
 `;
 
+  // EMAIL AZIENDA
   await fetch("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -37,6 +38,7 @@ ${messaggio}
     })
   });
 
+  // EMAIL DI CONFERMA UTENTE
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
@@ -61,5 +63,5 @@ EcoRappTech`
     });
   }
 
-  return new Response(null, { status: 204 });
+  return Response.redirect("/", 303);
 }
