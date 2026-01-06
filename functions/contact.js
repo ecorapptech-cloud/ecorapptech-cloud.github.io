@@ -1,13 +1,18 @@
-export async function onRequestPost(context) {
+export async function onRequest(context) {
+  // Accettiamo SOLO POST
+  if (context.request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
+  }
+
   const data = await context.request.formData();
 
-  const tipo = data.get("tipo");
-  const nome = data.get("nome");
-  const email = data.get("email");
-  const telefono = data.get("telefono");
-  const servizio = data.get("servizio");
-  const fascia = data.get("fascia");
-  const messaggio = data.get("messaggio");
+  const tipo = data.get("tipo") || "";
+  const nome = data.get("nome") || "";
+  const email = data.get("email") || "";
+  const telefono = data.get("telefono") || "";
+  const servizio = data.get("servizio") || "";
+  const fascia = data.get("fascia") || "";
+  const messaggio = data.get("messaggio") || "";
 
   const testo = `
 NUOVA RICHIESTA ECO RAPP TECH
@@ -23,7 +28,7 @@ Messaggio:
 ${messaggio}
 `;
 
-  // EMAIL AZIENDA
+  /* EMAIL AZIENDA */
   await fetch("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -38,7 +43,7 @@ ${messaggio}
     })
   });
 
-  // EMAIL DI CONFERMA UTENTE
+  /* EMAIL DI CONFERMA UTENTE */
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
@@ -63,5 +68,7 @@ EcoRappTech`
     });
   }
 
+  // Torna alla home, pagina pulita
   return Response.redirect("/", 303);
 }
+
