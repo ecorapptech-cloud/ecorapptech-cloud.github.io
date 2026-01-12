@@ -29,10 +29,11 @@ ${messaggio}
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       personalizations: [{ to: [{ email: "ecorapptech@gmail.com" }] }],
-      from: {
-        email: "noreply@ecorapptech.site",
-        name: "EcoRappTech"
-      },
+     from: {
+  email: "noreply@pages.cloudflare.com",
+  name: "EcoRappTech"
+}
+
       subject: "Nuova richiesta dal sito EcoRappTech",
       content: [{ type: "text/plain", value: testo }]
     })
