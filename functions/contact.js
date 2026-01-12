@@ -63,5 +63,11 @@ EcoRappTech`
     });
   }
 
-  return new Response("OK", { status: 200 });
-}
+return new Response(JSON.stringify({
+  status: "ok",
+  email_inserita: email,
+  nome: nome
+}), {
+  status: 200,
+  headers: { "Content-Type": "application/json" }
+});
