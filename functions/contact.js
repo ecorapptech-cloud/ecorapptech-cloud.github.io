@@ -23,23 +23,22 @@ Messaggio:
 ${messaggio}
 `;
 
-  // Email aziendale
+  // EMAIL AZIENDA
   await fetch("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       personalizations: [{ to: [{ email: "ecorapptech@gmail.com" }] }],
-     from: {
-  email: "noreply@pages.cloudflare.com",
-  name: "EcoRappTech"
-}
-
+      from: {
+        email: "noreply@pages.cloudflare.com",
+        name: "EcoRappTech"
+      },
       subject: "Nuova richiesta dal sito EcoRappTech",
       content: [{ type: "text/plain", value: testo }]
     })
   });
 
-  // Conferma utente
+  // EMAIL DI CONFERMA UTENTE
   if (email) {
     await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
@@ -47,7 +46,7 @@ ${messaggio}
       body: JSON.stringify({
         personalizations: [{ to: [{ email }] }],
         from: {
-          email: "noreply@ecorapptech.site",
+          email: "noreply@pages.cloudflare.com",
           name: "EcoRappTech"
         },
         subject: "Conferma ricezione richiesta – EcoRappTech",
@@ -64,6 +63,5 @@ EcoRappTech`
     });
   }
 
-  // Ritorno pagina pulita
   return new Response("OK", { status: 200 });
 }
