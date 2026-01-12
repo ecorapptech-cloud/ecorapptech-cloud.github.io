@@ -1,6 +1,68 @@
 export async function onRequestPost({ request }) {
-  return new Response("OK", {
-    status: 200,
-    headers: { "Content-Type": "text/plain" }
+  const data = await request.formData();
+
+  const tipo = data.get("tipo") || "";
+  const nome = data.get("nome") || "";
+  const email = data.get("email") || "";
+  const telefono = data.get("telefono") || "";
+  const servizio = data.get("servizio") || "";
+  const fascia = data.get("fascia") || "";
+  const messaggio = data.get("messaggio") || "";
+
+  const testo = `
+NUOVA RICHIESTA ECO RAPP TECH
+
+Tipologia: ${tipo}
+Nome: ${nome}
+Email: ${email}
+Telefono: ${telefono}
+Servizio: ${servizio}
+Fascia oraria: ${fascia}
+
+Messaggio:
+${messaggio}
+`;
+
+  // Email aziendale
+  await fetch("https://api.mailchannels.net/tx/v1/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      personalizations: [{ to: [{ email: "ecorapptech@gmail.com" }] }],
+      from: {
+        email: "noreply@ecorapptech.site",
+        name: "EcoRappTech"
+      },
+      subject: "Nuova richiesta dal sito EcoRappTech",
+      content: [{ type: "text/plain", value: testo }]
+    })
   });
+
+  // Conferma utente
+  if (email) {
+    await fetch("https://api.mailchannels.net/tx/v1/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        personalizations: [{ to: [{ email }] }],
+        from: {
+          email: "noreply@ecorapptech.site",
+          name: "EcoRappTech"
+        },
+        subject: "Conferma ricezione richiesta – EcoRappTech",
+        content: [{
+          type: "text/plain",
+          value: `Gentile ${nome},
+
+abbiamo ricevuto correttamente la sua richiesta.
+Un operatore EcoRappTech la contatterà nel più breve tempo possibile.
+
+EcoRappTech`
+        }]
+      })
+    });
+  }
+
+  // Ritorno pagina pulita
+  return new Response("OK", { status: 200 });
 }
