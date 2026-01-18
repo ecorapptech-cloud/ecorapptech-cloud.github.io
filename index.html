@@ -234,13 +234,8 @@
     Le richieste vengono prese in carico e riscontrate in modo puntuale dal nostro team.
   </p>
 
-<form id="contact-form" action="https://ecorapptech-crm.ecorapptech.workers.dev" method="POST" enctype="multipart/form-data">
-  <!-- I tuoi campi del form vanno qui -->
-</form>
-
-
-
-
+  <!-- INIZIO FORM CORRETTO -->
+  <form id="contact-form" action="https://ecorapptech-crm.ecorapptech.workers.dev" method="POST" enctype="multipart/form-data">
     <strong>Tipologia richiedente</strong><br>
     <select name="tipo" required style="width:100%; padding:10px; margin-bottom:15px;">
       <option value="">Seleziona</option>
@@ -280,19 +275,48 @@
       <option>Pomeriggio (14:00 – 18:00)</option>
       <option>Indifferente</option>
     </select>
-<strong>Messaggio</strong><br>
-<textarea name="messaggio" rows="5" required
-  style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
+    <strong>Messaggio</strong><br>
+    <textarea name="messaggio" rows="5" required
+      style="width:100%; padding:10px; margin-bottom:20px;"></textarea>
 
-<div style="margin:20px 0; padding:10px; border:1px solid #ddd; border-radius:6px;">
-  <label style="display:flex; align-items:flex-start; gap:10px; font-size:0.95rem;">
-    <input type="checkbox" name="consenso" value="SI" required style="margin-top:4px;">
-    <span>
-      Dichiaro di aver letto l’informativa privacy e
-      <strong>acconsento al trattamento dei dati personali</strong>
-      ai sensi del Regolamento UE 2016/679 (GDPR).
-    </span>
-  </label>
+    <div style="margin:20px 0; padding:10px; border:1px solid #ddd; border-radius:6px;">
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:0.95rem;">
+        <input type="checkbox" name="consenso" value="SI" required style="margin-top:4px;">
+        <span>
+          Dichiaro di aver letto l’informativa privacy e
+          <strong>acconsento al trattamento dei dati personali</strong>
+          ai sensi del Regolamento UE 2016/679 (GDPR).
+        </span>
+      </label>
+    </div>
+
+    <button type="submit" style="
+      background:#4a90e2;
+      color:#ffffff;
+      border:none;
+      padding:12px 30px;
+      font-size:1rem;
+      border-radius:6px;
+      cursor:pointer;
+    ">
+      Invia richiesta
+    </button>
+
+    <p style="margin-top:15px; font-size:0.9rem; color:#555;">
+      Il conferimento dell’indirizzo email è obbligatorio.
+      La richiesta verrà trasmessa al nostro team e un operatore EcoRappTech
+      vi risponderà nel più breve tempo possibile.
+    </p>
+  </form>
+  <!-- FINE FORM CORRETTO -->
+
+  <!-- GDPR -->
+  <div class="highlight" style="margin-top:30px;">
+    <strong>Privacy e trattamento dei dati (GDPR)</strong><br>
+    I dati forniti saranno trattati nel rispetto del Regolamento UE 2016/679 (GDPR)
+    esclusivamente per la gestione della richiesta.
+    I dati non saranno ceduti a terzi e saranno gestiti con adeguate misure di sicurezza.
+  </div>
 </div>
 
 
