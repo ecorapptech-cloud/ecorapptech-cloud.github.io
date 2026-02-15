@@ -122,12 +122,81 @@
       margin-top: 40px;
       font-size: 0.9rem;
     }
+/* ===============================
+   MOBILE FIX REAL (SMARTPHONE)
+================================ */
 
-    @media (max-width: 900px) {
-      .main-layout {
-        grid-template-columns: 1fr;
-      }
-    }
+@media (max-width: 700px) {
+
+  /* HEADER */
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  header {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo img {
+    max-width: 120px;
+  }
+
+  /* MENU */
+  nav {
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  /* LAYOUT */
+  .main-layout {
+    grid-template-columns: 1fr !important;
+    padding: 0 12px;
+    margin: 20px auto;
+    gap: 20px;
+  }
+
+  .content,
+  .sidebar {
+    width: 100%;
+  }
+
+  /* CARD */
+  .card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  /* FORM MOBILE (IMPORTANTISSIMO) */
+  input,
+  select,
+  textarea,
+  button {
+    width: 100% !important;
+    font-size: 16px; /* evita zoom iPhone */
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+}
+
+/* immagini sempre responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
   </style>
 </head>
 
