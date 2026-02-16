@@ -1,207 +1,220 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <link rel="stylesheet" href="style.css">
+
+<!-- =========================
+SEO GOOGLE (CORE)
+========================= -->
+
 <title>
-EcoRappTech | Consulenze Tecniche, Energia, Fotovoltaico e Comunità Energetiche
+EcoRappTech | Consulenza Tecnica, Energia, Fotovoltaico e Comunità Energetiche
 </title>
 
-<meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, agenzia di rappresentanza, forniture energia e gas, impianti fotovoltaici, sistemi di monitoraggio e sviluppo Comunità Energetiche per privati, aziende, terzo settore e pubblica amministrazione.">
+<meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, agenzia di rappresentanza aziendale, forniture energia e gas, impianti fotovoltaici, monitoraggio energetico e sviluppo Comunità Energetiche per privati, aziende, terzo settore e pubblica amministrazione.">
+
 <meta name="robots" content="index, follow">
+<meta name="author" content="EcoRappTech">
 <meta name="theme-color" content="#1f3c88">
+
+<link rel="canonical" href="https://www.ecorapptech.it/">
+
 <link rel="icon" type="image/png" href="favicon.png">
 
-  <style>
-    :root {
-      --primary: #4a90e2;
-      --secondary: #1f3c88;
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #2b2b2b;
-    }
+<!-- =========================
+SOCIAL PREVIEW (WhatsApp / LinkedIn)
+========================= -->
 
-    * { box-sizing: border-box; }
+<meta property="og:type" content="website">
+<meta property="og:title" content="EcoRappTech – Consulting and Solution">
+<meta property="og:description" content="Consulenze tecniche, rappresentanza aziendale, energia, fotovoltaico e comunità energetiche rinnovabili.">
+<meta property="og:image" content="https://www.ecorapptech.it/logo-ecorapptech.png">
+<meta property="og:url" content="https://www.ecorapptech.it/">
+<meta property="og:locale" content="it_IT">
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+<meta name="twitter:card" content="summary_large_image">
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      padding: 50px 20px;
-    }
+<!-- =========================
+PWA BASE (INSTALLABILE)
+========================= -->
 
-    .header-inner {
-      max-width: 1300px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 
-    .logo img {
-      max-width: 170px;
-    }
+<!-- =========================
+DATI STRUTTURATI GOOGLE
+(AZIENDA PROFESSIONALE)
+========================= -->
 
-    .header-text {
-      flex: 1;
-      text-align: center;
-    }
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "EcoRappTech",
+ "url": "https://www.ecorapptech.it",
+ "logo": "https://www.ecorapptech.it/logo-ecorapptech.png",
+ "description": "Consulenze tecniche, commerciali e amministrative, agenzia di rappresentanza aziendale, forniture energia e gas, impianti fotovoltaici e sviluppo Comunità Energetiche.",
+ "areaServed": "IT",
+ "sameAs": []
+}
+</script>
 
-    /* NAV */
-    nav {
-      background: #fff;
-      padding: 12px 0;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+<style>
 
-    nav a {
-      margin: 0 18px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
-    }
+/* ======= IL TUO CSS RESTA IDENTICO ======= */
 
-    /* LAYOUT 2 COLONNE */
-    .main-layout {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 40px;
-    }
-
-    /* CONTENUTO SINISTRO (INDEX ORIGINALE) */
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 35px;
-    }
-
-    /* COLONNA DESTRA (SERVIZI / PRODOTTI) */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .card h2, .card h3 {
-      margin-top: 0;
-      color: var(--secondary);
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: var(--secondary);
-      color: #fff;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-/* ===============================
-   MOBILE FIX REAL (SMARTPHONE)
-================================ */
-
-@media (max-width: 700px) {
-
-  /* HEADER */
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  header {
-    padding: 30px 15px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  .logo img {
-    max-width: 120px;
-  }
-
-  /* MENU */
-  nav {
-    padding: 10px;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-    font-size: 1rem;
-  }
-
-  /* LAYOUT */
-  .main-layout {
-    grid-template-columns: 1fr !important;
-    padding: 0 12px;
-    margin: 20px auto;
-    gap: 20px;
-  }
-
-  .content,
-  .sidebar {
-    width: 100%;
-  }
-
-  /* CARD */
-  .card {
-    padding: 18px;
-    border-radius: 12px;
-  }
-
-  /* FORM MOBILE (IMPORTANTISSIMO) */
-  input,
-  select,
-  textarea,
-  button {
-    width: 100% !important;
-    font-size: 16px; /* evita zoom iPhone */
-  }
-
-  textarea {
-    min-height: 120px;
-  }
-
+:root {
+  --primary: #4a90e2;
+  --secondary: #1f3c88;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #2b2b2b;
 }
 
-/* immagini sempre responsive */
-img {
-  max-width: 100%;
-  height: auto;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
-  </style>
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.header-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo img { max-width:170px; }
+
+.header-text {
+  flex:1;
+  text-align:center;
+}
+
+/* NAV */
+nav {
+  background:#fff;
+  padding:12px 0;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav a {
+  margin:0 18px;
+  text-decoration:none;
+  color:var(--primary);
+  font-weight:600;
+}
+
+/* LAYOUT */
+.main-layout{
+  max-width:1400px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:40px;
+}
+
+.content{
+  display:flex;
+  flex-direction:column;
+  gap:35px;
+}
+
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:14px;
+  padding:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h2,.card h3{
+  margin-top:0;
+  color:var(--secondary);
+}
+
+ul{padding-left:18px;}
+ul li{margin-bottom:10px;}
+
+footer{
+  background:var(--secondary);
+  color:#fff;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:40px;
+  font-size:0.9rem;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+
+.header-inner{
+  flex-direction:column;
+  text-align:center;
+  gap:15px;
+}
+
+header{padding:30px 15px;}
+h1{font-size:1.6rem;}
+
+.logo img{max-width:120px;}
+
+nav a{
+  display:block;
+  margin:10px 0;
+}
+
+.main-layout{
+  grid-template-columns:1fr!important;
+  padding:0 12px;
+  margin:20px auto;
+  gap:20px;
+}
+
+.card{padding:18px;}
+
+input,select,textarea,button{
+  width:100%!important;
+  font-size:16px;
+}
+
+textarea{min-height:120px;}
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+</style>
+
 </head>
 
 <body>
