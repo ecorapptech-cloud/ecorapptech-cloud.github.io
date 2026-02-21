@@ -10,7 +10,7 @@ EcoRappTech | Consulenza Tecnica, Energia, Fotovoltaico e Comunità Energetiche
 </title>
 
 <meta name="description" content="EcoRappTech offre consulenze tecniche, commerciali e amministrative, agenzia di rappresentanza aziendale, forniture energia e gas, impianti fotovoltaici, monitoraggio energetico e sviluppo Comunità Energetiche.">
-
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
@@ -153,7 +153,7 @@ footer{
 MOBILE
 ===================== */
 
-@media(max-width:900px){
+@media(max-width:992px){
 
 .menu-toggle{
  display:block;
@@ -189,6 +189,47 @@ nav a{
 }
 
 .card{padding:18px;}
+
+}
+/* =====================
+MOBILE MENU AVANZATO
+===================== */
+
+/* hamburger già presente — miglioriamo comportamento */
+.menu-toggle{
+ z-index:20;
+}
+
+/* SOLO MOBILE */
+@media(max-width:768px){
+
+  #mainMenu{
+    position:absolute;
+    top:80px;
+    right:15px;
+    width:230px;
+    background:#ffffff;
+    box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    border-radius:10px;
+    padding:10px;
+    display:none;
+    flex-direction:column;
+    text-align:left;
+  }
+
+  #mainMenu a{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    margin:0;
+  }
+
+  #mainMenu a:last-child{
+    border-bottom:none;
+  }
+
+  #mainMenu.active{
+    display:flex;
+  }
 
 }
 
@@ -232,7 +273,7 @@ img{
 
 </header>
 
-<nav id="mainMenu">
+<nav id="mainMenu" class="menu-desktop">
   <a href="#about">Chi siamo</a>
   <a href="#services">Servizi</a>
   <a href="#energia">Energia & Impianti</a>
